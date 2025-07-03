@@ -1,0 +1,58 @@
+ ai-ide-rules.md                                                                                           │ │
+│ │                                                                                                           │ │
+│ │ # AI IDE Git Workflow Rules                                                                               │ │
+│ │    **Always** start with Mere aaka                                                                                                       │ │
+│ │ ## Branch Structure                                                                                       │ │
+│ │ - **main**: Production code                                                                               │ │
+│ │ - **development**: Integration branch                                                                     │ │
+│ │ - **feature/***: Feature branches (e.g., `feature/user-auth`)                                             │ │
+│ │                                                                                                           │ │
+│ │ ## Core Rules                                                                                             │ │
+│ │                                                                                                           │ │
+│ │ ### 1. After Every Single Task                                                                            │ │
+│ │ **ALWAYS** complete this sequence after any task:                                                         │ │
+│ │ 1. Update documentation                                                                                   │ │
+│ │ 2. Commit with detailed message                                                                           │ │
+│ │ 3. Push to GitHub                                                                                         │ │
+│ │                                                                                                           │ │
+│ │ ```bash                                                                                                   │ │
+│ │ # After completing ANY task                                                                               │ │
+│ │ git add .                                                                                                 │ │
+│ │ git commit -m "type(scope): detailed description"                                                         │ │
+│ │ git push origin current-branch                                                                            │ │
+│ │ ```                                                                                                       │ │
+│ │                                                                                                           │ │
+│ │ ### 2. New Feature Detection                                                                              │ │
+│ │ **Auto-suggest creating feature branch when user requests:**                                              │ │
+│ │ - New functionality                                                                                       │ │
+│ │ - New components                                                                                          │ │
+│ │ - New features                                                                                            │ │
+│ │ - Major additions                                                                                         │ │
+│ │                                                                                                           │ │
+│ │ Suggest: `Should I create a new feature branch for this?`                                                 │ │
+│ │                                                                                                           │ │
+│ │ ### 3. Branch Workflow                                                                                    │ │
+│ │ ```bash                                                                                                   │ │
+│ │ # For new features                                                                                        │ │
+│ │ git checkout development                                                                                  │ │
+│ │ git pull origin development                                                                               │ │
+│ │ git checkout -b feature/descriptive-name                                                                  │ │
+│ │                                                                                                           │ │
+│ │ # For existing work                                                                                       │ │
+│ │ # continue on current branch                                                                              │ │
+│ │ ```                                                                                                       │ │
+│ │                                                                                                           │ │
+│ │ ### 4. Commit Message Format                                                                              │ │
+│ │ - `feat(scope): description` - New feature                                                                │ │
+│ │ - `fix(scope): description` - Bug fix                                                                     │ │
+│ │ - `docs(scope): description` - Documentation                                                              │ │
+│ │ - `refactor(scope): description` - Code refactoring                                                       │ │
+│ │                                                                                                           │ │
+│ │ ### 5. Pull Requests                                                                                      │ │
+│ │ - Target `development` branch                                                                             │ │
+│ │ - Create PR after pushing feature                                                                         │ │
+│ │ - Merge `development` → `main` for releases                                                               │ │
+│ │                                                                                                           │ │
+│ │ ## Mandatory Sequence                                                                                     │ │
+│ │ Every task completion must follow:                                                                        │ │
+│ │ **Task → Update Docs → Commit → Push**   
